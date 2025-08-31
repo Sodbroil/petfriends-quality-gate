@@ -1,0 +1,38 @@
+{
+  "name": "petfriends-quality-gate",
+  "version": "1.0.0",
+  "description": "Comprehensive QA testing suite for PetFriends application",
+  "scripts": {
+    "test": "playwright test",
+    "test:api": "newman run 4-automation/postman-collection/PetFriends_API.postman_collection.json",
+    "test:ui": "playwright test",
+    "test:chrome": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:safari": "playwright test --project=webkit",
+    "test:mobile": "playwright test --project='Mobile Chrome' --project='Mobile Safari'",
+    "test:report": "playwright show-report",
+    "install:browsers": "playwright install",
+    "lint": "eslint 4-automation/playwright-poc/",
+    "ci:test": "npm run test:ui && npm run test:api"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.38.0",
+    "newman": "^5.3.2",
+    "newman-reporter-htmlextra": "^1.22.11",
+    "eslint": "^8.45.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "keywords": [
+    "qa",
+    "testing",
+    "playwright",
+    "postman",
+    "newman",
+    "automation"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
