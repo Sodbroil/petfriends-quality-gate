@@ -12,9 +12,9 @@
 
 | **Documentation** | **Test Artifacts** | **Bug Reports** | **Automation** |
 | :--- | :--- | :--- | :--- |
-| [📋 Test Strategy](1-documentation/Test_Strategy.md) | [✅ Checklists](2-test-design/checklists/) | [🐞 Critical Bugs](3-bug-reports/critical/) | [🛠 Postman Collection](4-automation/postman-collection/) |
-| [📅 Test Plan](1-documentation/Test_Plan.md) | [🧪 Test Cases](2-test-design/test-cases/) | [⚠️ High Priority Bugs](3-bug-reports/high/) | (POC: Playwright) |
-| [📊 Summary Report](1-documentation/Test_Summary_Report.md) | [🧠 Mind Maps](2-test-design/mind-maps/) | [💡 UI/UX Suggestions](3-bug-reports/ui-ux-suggestions/) | |
+| [📋 Test Strategy](documentation/Test_Strategy.md) | [✅ Checklists](test-design/checklists/) | [🐞 Critical Bugs](bug-reports/critical/) | [🛠 Postman Collection](automation/postman-collection/) |
+| [📅 Test Plan](documentation/Test_Plan.md) | [🧪 Test Cases](test-design/test-cases/) | [⚠️ High Priority Bugs](bug-reports/high/) | (POC: Playwright) |
+| [📊 Summary Report](documentation/Test_Summary_Report.md) | [🧠 Mind Maps](test-design/mind-maps/) | [💡 UI/UX Suggestions](bug-reports/ui-ux-suggestions/) | |
 
 ---
 
