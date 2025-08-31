@@ -1,0 +1,44 @@
+name: API Tests with Newman
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 8 * * 1-5' # Run every weekday at 8 AM
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install Newman
+      run: npm install -g newman newman-reporter-htmlextra
+
+    - name: Run API tests
+      run: |
+        newman run 4-automation/postman-collection/PetFriends_API.postman_collection.json \
+          --environment-var "baseUrl=https://petfriends.skillfactory.ru" \
+          --environment-var "email=test@example.com" \
+          --environment-var "password=Test123!" \
+          --reporters cli,htmlextra \
+          --reporter-htmlextra-export newman-report.html \
+          --reporter-htmlextra-title "PetFriends API Test Report"
+
+    - name: Upload Newman report
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: newman-report
+        path: newman-report.html
+        retention-days: 30
